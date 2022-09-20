@@ -1,0 +1,7 @@
+.contianer{
+    width: 50%;
+    min-height: 55vh;
+    padding: 1rem;
+    background-color: blueviolet;
+    border-radius: 0.5rem;
+}

@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import Todos from "./Component/Todos/Todos";
+import Form from "./Component/formInput/Form";
 
-function App() {
+
+import styles from './App.module.css';
+import { useEffect, useState } from "react";
+const App = () => {
+// title, description, startDate, endDate, deleteHandler
+  const todosInitial = () => {
+    let todos = JSON.parse(localStorage.getItem("todos"));
+    return todos;
+  }
+
+
+
+  const [todos, setTodos] = useState(todosInitial);
+
+  useEffect(() => { 
+    let todoStore = JSON.stringify(todos);
+    localStorage.setItem("todos", todoStore);
+  }, [todos]);
+
+  const deleteHandler = (id) => {
+    let filterData = todos.filter((todo, index) => {
+      if (index !== id) {
+        return todo;
+      } });
+    setTodos(filterData);
+  }
+
+  const addHandler = (todo) => {
+    setTodos((prev) => [...prev, todo]);
+  }
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.container}>
+      <Todos todos={todos} deleteHandler={deleteHandler} />
+      <Form addHandler={ addHandler} />
     </div>
   );
 }

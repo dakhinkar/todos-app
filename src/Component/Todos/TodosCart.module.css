@@ -1,0 +1,32 @@
+
+.container{
+    width: 100%;
+    margin: 0.5rem;
+    padding: 5px 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: aqua;
+
+
+}
+.todoDetails span{
+    margin-right: 10px;
+}
+.action{
+    margin: 0 5px;
+    /* gap: 5px; */
+}
+.action button{
+    background-color: blueviolet;
+    border: 1px solid blueviolet;
+    color:  white;
+    font-weight: 500;
+    cursor: pointer;
+}
+.action button:hover{
+    color: black;
+}
+.leftButton{
+    margin-right: 5px;
+}

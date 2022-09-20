@@ -1,0 +1,39 @@
+.formContainer{
+    width: 30%;
+    padding: 1.5rem;
+    border: 1px solid black;
+    height: 50%;
+    border-radius: 1rem;
+}
+.formContainer h3{
+    text-align: center;
+    text-decoration: underline;
+}
+.row{
+    width: 100%;
+    margin-top: 0.75rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.row label{
+    font-size: 1rem;
+    font-weight: 600;
+}
+.row input{
+    /* outline: 1px solid black; */
+    border: 1px solid black;
+    padding: 5px;
+    min-width: 12rem;
+}
+.action button{
+    /* width: 50%; */
+    /* justify-content: end; */
+    background-color: blueviolet;
+    border: 1px solid blueviolet;
+    color: white;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 5px;    
+}
